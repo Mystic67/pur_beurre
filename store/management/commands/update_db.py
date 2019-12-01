@@ -3,7 +3,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.db import DataError
 
-from store.models import Categories, Products, Nutriments_for_100g, User_Favorites_Substitutes
+from store.models import Categories, Products, Nutriments_for_100g
 
 
 class Command(BaseCommand):
