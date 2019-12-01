@@ -18,9 +18,6 @@ if os.environ.get('ENV') == 'PRODUCTION':
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
 # SECURITY WARNING: don't run with debug turned on in production!
 if os.environ.get('ENV') == 'PRODUCTION':
     DEBUG = False
@@ -59,8 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.middleware.locale.LocaleMiddleware'
 ]
 
 ROOT_URLCONF = 'pur_beurre.urls'
@@ -133,28 +129,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'accounts/static/'),
-#     os.path.join(BASE_DIR, 'store/static/'),
-# ]
-
 INTERNAL_IPS = ['127.0.0.1']
 
 if os.environ.get('ENV') == 'PRODUCTION':
-
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-    # Extra places for collectstatic to find static files.
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
-
-    # Simplified static file serving.
-    # https://warehouse.python.org/project/whitenoise/
-    #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-    db_from_env = dj_database_url.config(conn_max_age = 500)
-    DATABASES['default'].update(db_from_env)
 
 # Openfoofacts search catégories
 CATEGORIES = [
