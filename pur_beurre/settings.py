@@ -142,11 +142,11 @@ INTERNAL_IPS = ['127.0.0.1']
 
 if os.environ.get('ENV') == 'PRODUCTION':
 
-    STATIC_ROOT = os.path.join(BASE_DIR, 'pur_beurre/staticfiles')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
     # Extra places for collectstatic to find static files.
     STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'pur_beurre/static'),
+        os.path.join(BASE_DIR, 'static'),
     )
 
     # Simplified static file serving.
