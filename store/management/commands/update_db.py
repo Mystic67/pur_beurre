@@ -14,10 +14,9 @@ class Command(BaseCommand):
         off_url = 'https://fr.openfoodfacts.org/cgi/search.pl?'
         off_params = {
             "action": "process",
-            "contries": "france",
             "tagtype_0": "categories",
             "tag_contains_0": "contains",
-            "page_size": "1000",
+            "page_size": "100",
             "json": "1",
             "tag_0": categorie,  # Search categorie
             # "search_terms": ""  # Search item
