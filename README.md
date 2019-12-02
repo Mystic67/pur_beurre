@@ -1,6 +1,6 @@
-#->Application Pur Beurre<-
+# Application Pur Beurre (Projet 8)
 
-##I. **Présentation:** 
+## **I. Présentation:**
                                        
 <div align="center">
     <img src="/store/static/store/img/Screenshot.png">
@@ -43,7 +43,7 @@ L'application peut être déployé sur un serveur Heroku.
         Il suffit d'entrer la requête et appuyer sur la touche "Entrer" de son clavier.
  
   
-##**II. Installation**
+## **II. Installation**
 
 **Prérequis:**
 1) Télécharger et installé le serveur de base de donnée PostgreSQL:  
@@ -68,7 +68,7 @@ L'application peut être déployé sur un serveur Heroku.
     `>>> pip install -r requirement.txt`  
 6) Votre environement est créé, il vous reste à installer les bases de données (voir la suite)
 
-####**Installation de la base de donnée:**
+#### **Installation de la base de donnée:**
 1) Configurer les settings:  
     a) Ouvrer fichier 'settings.py' avec votre éditeur préféré qui se trouve depuis le racine du projet:  
         **/pur_beurre/settings.py**  
@@ -95,7 +95,7 @@ L'application peut être déployé sur un serveur Heroku.
     c) Peupler les tables avec les données d'openfoodfacts:
        `>>> python manage.py update_db` ou le racourci `>>> ./manage.py update_db`
        
-####**Démarrer le serveur de développement:**  
+#### **Démarrer le serveur de développement:**  
   -   Toujours dans la console:  
         `>>> python manage.py runserver`
     
@@ -110,7 +110,7 @@ Ex: http://127.0.0.1:800 ou http://localhost:8000
 Créer un compte sur heroku à l'adresse suivante:  
 <https://www.heroku.com/>
 
-####**Installation**
+#### **Installation**
 1. Créer une nouvelle application heroku.  
    `>>> heroku create nom_application`
 2. Créer les variables d'environement sur le serveur:  
