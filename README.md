@@ -123,7 +123,7 @@ Créer un compte sur heroku à l'adresse suivante:
          Copier le résultat obtenu. 
         - Placer la clé en variable d'enrironement sur heroku.  
          `>>> heroku config:set SECRET_KEY='coller ici la clé généré'` <-- coller la clé généré entre guillements simple ( ' )  
-3. Pusher le repository sur serveur avec Git:
+3. Pusher le repository sur serveur avec Git:  
     `git push heroku master`
     
 4. Créer les tables de la base de données et les peupler:
