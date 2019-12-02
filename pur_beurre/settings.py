@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
+if os.environ.get('ENV') == 'PRODUCTION':
+    import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -127,8 +128,9 @@ INTERNAL_IPS = ['127.0.0.1']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+if os.environ.get('ENV') == 'PRODUCTION':
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Openfoofacts search catégories
@@ -139,6 +141,6 @@ CATEGORIES = [
     "Desserts",
     "Fromages"
 ]
-
-django_heroku.settings(locals())
+if os.environ.get('ENV') == 'PRODUCTION':
+    django_heroku.settings(locals())
 
